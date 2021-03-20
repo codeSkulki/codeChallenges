@@ -11,14 +11,28 @@ Finish the solution so that it returns the sum of all the multiples of 3 or 5 be
 
 // solution 
 
-function solution(number){
-  let threes = []
-  let fives = []
 
-  let numberThrees = number
-  let numberFives = number
-  if (numberThrees) {
-    while (number % 1 != 0)
-  }
-  
+function arrSum(arr){
+  return arr.reduce(function(a,b){
+    return a + b
+  }, 0);
 }
+
+
+function solution(number){
+  let multiples = [0]
+  
+  
+  for (let index = 0; index < number; index++) {
+    if (index /3 %1 == 0){
+      multiples.push(index)
+    }
+    else if (index /5 %1 == 0){
+      multiples.push(index)
+    }
+    
+  }
+  return arrSum(multiples);
+}
+
+console.log(solution(18));
