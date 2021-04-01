@@ -7,6 +7,29 @@
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
 
+
+//solution
+
 var uniqueInOrder=function(iterable){
-    //your code here - remember iterable can be a string or an array
+    let arr
+    if(typeof iterable === typeof "string"){
+        arr = iterable.split('');
+    }else if(typeof iterable === typeof 1){
+        arr = iterable.toString();
+    }else{
+        arr = iterable;
+    }
+    let list = [];
+
+    for (let index = 0; index < arr.length; index++) {
+        if (arr[index] != arr[index-1]){
+            list.push(arr[index])
+        }
+        
+    }
+    return list;
   }
+
+
+console.log(uniqueInOrder([1,2,3]));
+
